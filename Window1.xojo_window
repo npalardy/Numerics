@@ -32,45 +32,192 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Open()
+		  DoubleTests
+		  SingleTests()
+		  
+		End Sub
+	#tag EndEvent
+
+
+	#tag Method, Flags = &h1
+		Protected Sub DoubleTests()
 		  Dim d As Double = 5000000000.0
 		  
 		  Dim i8_1 As Int32
 		  Dim i8_2 As Int32
+		  Dim i8_3 As Int32
 		  
 		  Dim i16_1 As Int32
 		  Dim i16_2 As Int32
+		  Dim i16_3 As Int32
 		  
 		  Dim i32_1 As Int32
 		  Dim i32_2 As Int32
+		  Dim i32_3 As Int32
 		  
 		  Dim i64_1 As Int64
 		  Dim i64_2 As Int64
+		  Dim i64_3 As Int64
 		  
 		  Dim i_1 As Integer
 		  Dim i_2 As Integer
+		  Dim i_3 As Integer
 		  
+		  i8_1 = d
 		  Try
-		    i8_1 = d
 		    i8_2 = d.ToInt8
-		    
-		    i16_1 = d
-		    i16_2 = d.ToInt16
-		    
-		    i32_1 = d
-		    i32_2 = d.ToInt32
-		    
-		    i64_1 = d
-		    i64_2 = d.ToInt64
-		    
-		    i_1 = d
-		    i_2 = d.ToInteger
-		    
 		  Catch cex As ConversionException
 		    Break
 		  End Try
 		  
+		  Try
+		    i8_3 = Numerics.ToInt8(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  i16_1 = d
+		  Try
+		    i16_2 = d.ToInt16
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  Try
+		    i16_3 = Numerics.ToInt16(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  i32_1 = d
+		  Try
+		    i32_2 = d.ToInt32
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  Try
+		    i32_3 = Numerics.ToInt32(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  i64_1 = d
+		  Try
+		    i64_2 = d.ToInt64
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  Try
+		    i64_3 = Numerics.ToInt64(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  i_1 = d
+		  Try
+		    i_2 = d.ToInteger
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  Try
+		    i_3 = Numerics.ToInteger(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  
 		End Sub
-	#tag EndEvent
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SingleTests()
+		  Dim d As Single = 5000000000.0
+		  
+		  Dim i8_1 As Int32
+		  Dim i8_2 As Int32
+		  Dim i8_3 As Int32
+		  
+		  Dim i16_1 As Int32
+		  Dim i16_2 As Int32
+		  Dim i16_3 As Int32
+		  
+		  Dim i32_1 As Int32
+		  Dim i32_2 As Int32
+		  Dim i32_3 As Int32
+		  
+		  Dim i64_1 As Int64
+		  Dim i64_2 As Int64
+		  Dim i64_3 As Int64
+		  
+		  Dim i_1 As Integer
+		  Dim i_2 As Integer
+		  Dim i_3 As Integer
+		  
+		  i8_1 = d
+		  Try
+		    i8_2 = d.ToInt8
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  Try
+		    i8_3 = Numerics.ToInt8(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  i16_1 = d
+		  Try
+		    i16_2 = d.ToInt16
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  Try
+		    i16_3 = Numerics.ToInt16(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  i32_1 = d
+		  Try
+		    i32_2 = d.ToInt32
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  Try
+		    i32_3 = Numerics.ToInt32(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  i64_1 = d
+		  Try
+		    i64_2 = d.ToInt64
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  Try
+		    i64_3 = Numerics.ToInt64(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  i_1 = d
+		  Try
+		    i_2 = d.ToInteger
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  Try
+		    i_3 = Numerics.ToInteger(d)
+		  Catch cex As ConversionException
+		    Break
+		  End Try
+		  
+		  
+		End Sub
+	#tag EndMethod
 
 
 #tag EndWindowCode
